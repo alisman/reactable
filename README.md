@@ -206,6 +206,38 @@ ReactDOM.render(
 
 In this example, the `position` column will **not** be rendered.
 
+### Using custom components to render column cells
+
+```jsx
+class CustomCell extends React.Component {
+
+    handleClick(){
+        alert(this.props.data);
+    }
+
+    render() {
+        if (this.props.data) {
+            return <a href={this.props.data.url}>{this.props.data.name}</a>;
+        } else {
+            return null;
+        }
+
+    }
+}
+
+ReactDOM.render(
+        <Table className="table" columnFormatters={ { 'site': CustomCell } } id="table" data={[
+            { Name: 'Griffin Smith', Age: '18'},
+            { Age: '28', Name:'Aaron Lisman', site:{ name:'www.aaronlisman.com', url:"http://www.aaronlisman.com" } },
+            { Age: '23', Name:'Lee Salminen' },
+        ]} sortable={['Name','Age']} filterable={['Name','Age','site']} />,
+        document.getElementById('test-div')
+);
+```
+
+In this example the columnFormatters is a map of components to column keys.  That component will then be passed the value node as
+data property and can't render as it will.
+
 ### Additional node types
 
 Reactable also supports specifying a `<tfoot>` for your table, via the
