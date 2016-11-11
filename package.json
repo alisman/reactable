@@ -1,5 +1,5 @@
 {
-  "name": "reactable",
+  "name": "reactableMSK",
   "version": "0.14.0",
   "description": "Fast, flexible, simple data tables in React",
   "main": "./lib/reactable.js",
