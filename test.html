@@ -22,8 +22,9 @@
             }
 
             render() {
+
                 if (this.props.data) {
-                    return <a href={this.props.data.url}>{this.props.data.name}</a>;
+                    return <a href={this.props.rowData.site.url}>{this.props.data.name}</a>;
                 } else {
                     return null;
                 }

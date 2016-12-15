@@ -33,9 +33,9 @@ export class Tr extends React.Component {
                     }
 
 
-                    return <Td column={column} formatter={formatter} key={column.key} {...props}>{value}</Td>;
+                    return <Td column={column} tableData={this.props.tableData} rowData={this.props.data} formatter={formatter} key={column.key} {...props}>{value}</Td>;
                 } else {
-                    return <Td column={column} formatter={formatter} key={column.key} />;
+                    return <Td column={column} tableData={this.props.tableData} rowData={this.props.data} formatter={formatter} key={column.key} />;
                 }
             }.bind(this)));
         }

@@ -479,7 +479,7 @@ window.ReactDOM["default"] = window.ReactDOM;
                     return _react['default'].createElement(
                         'td',
                         mergedProps,
-                        _react['default'].createElement(this.props.formatter, _extends({}, mergedProps, { data: this.props.children }))
+                        _react['default'].createElement(this.props.formatter, _extends({}, mergedProps, { tableData: this.props.tableData, rowData: this.props.rowData, data: this.props.children }))
                     );
                 } else {
                     return _react['default'].createElement(
@@ -557,11 +557,11 @@ window.ReactDOM["default"] = window.ReactDOM;
 
                             return _react['default'].createElement(
                                 _td.Td,
-                                _extends({ column: column, formatter: formatter, key: column.key }, props),
+                                _extends({ column: column, tableData: this.props.tableData, rowData: this.props.data, formatter: formatter, key: column.key }, props),
                                 value
                             );
                         } else {
-                            return _react['default'].createElement(_td.Td, { column: column, formatter: formatter, key: column.key });
+                            return _react['default'].createElement(_td.Td, { column: column, tableData: this.props.tableData, rowData: this.props.data, formatter: formatter, key: column.key });
                         }
                     }).bind(this)));
                 }
@@ -1457,7 +1457,7 @@ window.ReactDOM["default"] = window.ReactDOM;
                             }
                         }
 
-                        return _react['default'].createElement(_tr.Tr, _extends({ columns: columns, key: i, data: data, columnFormatters: this.props.columnFormatters }, props));
+                        return _react['default'].createElement(_tr.Tr, _extends({ columns: columns, key: i, tableData: this.data, data: data, columnFormatters: this.props.columnFormatters }, props));
                     }).bind(this)));
                 }
 
